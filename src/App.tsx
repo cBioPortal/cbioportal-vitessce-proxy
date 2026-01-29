@@ -28,7 +28,7 @@ function App() {
       sessionStorage.setItem('customVitessceConfig', JSON.stringify(parsed))
       navigate('/view?dataset=_custom')
     } catch (err) {
-      setError('Invalid JSON: ' + (err as Error).message)
+      setError('Invalid JSON: ' + (err instanceof Error ? err.message : String(err)))
     }
   }
 

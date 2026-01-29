@@ -96,7 +96,7 @@ function VitessceViewer() {
                   type="text"
                   readOnly
                   value={embedUrl}
-                  onClick={(e) => (e.target as HTMLInputElement).select()}
+                  onClick={(e) => e.currentTarget.select()}
                 />
                 <button
                   onClick={() => {
