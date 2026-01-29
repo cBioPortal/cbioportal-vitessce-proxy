@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [react()],
   resolve: {
     dedupe: ['react', 'react-dom'],
+    alias: mode !== 'production' ? { vitessce: '@vitessce/dev' } : {},
   },
   test: {
     globals: true,
