@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>cBioPortal Vitessce Proxy</title>
+    <script>
+      // Redirect all paths to index.html preserving the path and query string.
+      // GitHub Pages serves this 404.html for any unknown route, so we store
+      // the original URL and let the SPA router handle it.
+      var segment = 1; // number of path segments to keep (repo name)
+      var loc = window.location;
+      loc.replace(
+        loc.protocol + '//' + loc.hostname + (loc.port ? ':' + loc.port : '') +
+        loc.pathname.split('/').slice(0, 1 + segment).join('/') + '/' +
+        '?p=/' + loc.pathname.split('/').slice(segment + 1).join('/').replace(/&/g, '~and~') +
+        (loc.search ? '&q=' + loc.search.slice(1).replace(/&/g, '~and~') : '') +
+        loc.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
