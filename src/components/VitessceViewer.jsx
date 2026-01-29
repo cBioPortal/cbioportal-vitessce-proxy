@@ -79,31 +79,36 @@ function VitessceViewer() {
 
   return (
     <div className="page-full">
-      {!isEmbedMode && configUrl && (
-        <p className="text-muted" style={{ margin: '0 0 16px 0', fontSize: '0.875rem' }}>
-          <a href={configUrl} target="_blank" rel="noopener noreferrer">View JSON config</a>
-        </p>
-      )}
-      {!isEmbedMode && embedUrl && (
+      {!isEmbedMode && (configUrl || embedUrl) && (
         <div className="embed-box">
-          <p>Want to embed this view? Use this URL:</p>
-          <div className="input-group">
-            <input
-              type="text"
-              readOnly
-              value={embedUrl}
-              onClick={(e) => e.target.select()}
-            />
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(embedUrl)
-                setCopied(true)
-                setTimeout(() => setCopied(false), 2000)
-              }}
-            >
-              {copied ? 'Copied!' : 'Copy'}
-            </button>
-          </div>
+          <h3 style={{ margin: '0 0 12px 0', fontSize: '0.95rem' }}>Config & Sharing</h3>
+          {configUrl && (
+            <p style={{ margin: '0 0 12px 0' }}>
+              <a href={configUrl} target="_blank" rel="noopener noreferrer">View JSON config</a>
+            </p>
+          )}
+          {embedUrl && (
+            <>
+              <p>Embed URL: <a href={embedUrl} target="_blank" rel="noopener noreferrer">open</a></p>
+              <div className="input-group">
+                <input
+                  type="text"
+                  readOnly
+                  value={embedUrl}
+                  onClick={(e) => e.target.select()}
+                />
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(embedUrl)
+                    setCopied(true)
+                    setTimeout(() => setCopied(false), 2000)
+                  }}
+                >
+                  {copied ? 'Copied!' : 'Copy'}
+                </button>
+              </div>
+            </>
+          )}
         </div>
       )}
       <Vitessce
