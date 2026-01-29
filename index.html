@@ -7,6 +7,23 @@
     <title>cBioPortal Vitessce Proxy</title>
   </head>
   <body>
+    <script>
+      // Restore the URL after a 404.html redirect from GitHub Pages.
+      (function () {
+        var q = window.location.search;
+        if (q.indexOf('p=') > -1) {
+          var params = q.slice(1).split('&');
+          var path = '', query = '';
+          params.forEach(function (param) {
+            if (param.indexOf('p=') === 0) path = param.slice(2).replace(/~and~/g, '&');
+            if (param.indexOf('q=') === 0) query = param.slice(2).replace(/~and~/g, '&');
+          });
+          window.history.replaceState(null, '',
+            window.location.pathname + (path || '') + (query ? '?' + query : '') + window.location.hash
+          );
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
