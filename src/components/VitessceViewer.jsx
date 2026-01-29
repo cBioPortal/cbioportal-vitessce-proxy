@@ -68,6 +68,9 @@ function VitessceViewer() {
     return <div className="page">Loading...</div>
   }
 
+  // Build config URL for direct access to the JSON
+  const configUrl = jsonUrl || (dataset && dataset !== '_custom' ? `/view_configs/${dataset}.json` : null)
+
   // Build embed URL (current URL + embed=true)
   const canEmbed = dataset !== '_custom'
   const embedUrl = canEmbed
@@ -76,6 +79,11 @@ function VitessceViewer() {
 
   return (
     <div className="page-full">
+      {!isEmbedMode && configUrl && (
+        <p className="text-muted" style={{ margin: '0 0 16px 0', fontSize: '0.875rem' }}>
+          <a href={configUrl} target="_blank" rel="noopener noreferrer">View JSON config</a>
+        </p>
+      )}
       {!isEmbedMode && embedUrl && (
         <div className="embed-box">
           <p>Want to embed this view? Use this URL:</p>
