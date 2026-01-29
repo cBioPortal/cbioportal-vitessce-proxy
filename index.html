@@ -18,8 +18,9 @@
             if (param.indexOf('p=') === 0) path = param.slice(2).replace(/~and~/g, '&');
             if (param.indexOf('q=') === 0) query = param.slice(2).replace(/~and~/g, '&');
           });
+          var base = window.location.pathname.replace(/\/+$/, '');
           window.history.replaceState(null, '',
-            window.location.pathname + (path || '') + (query ? '?' + query : '') + window.location.hash
+            base + (path || '') + (query ? '?' + query : '') + window.location.hash
           );
         }
       })();
