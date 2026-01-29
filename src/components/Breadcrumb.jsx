@@ -13,7 +13,9 @@ function Breadcrumb() {
   }
 
   // Build display segments from path + dataset/json query param
-  const displaySegments = [...pathSegments]
+  const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1)
+
+  const displaySegments = pathSegments.map((segment) => capitalize(decodeURIComponent(segment)))
   if (jsonUrl) {
     displaySegments.push('External Config')
   } else if (dataset) {
@@ -23,17 +25,12 @@ function Breadcrumb() {
   return (
     <nav className="breadcrumb">
       <Link to="/">Home</Link>
-      {displaySegments.map((segment) => {
-        const decoded = decodeURIComponent(segment)
-        const capitalized = decoded.charAt(0).toUpperCase() + decoded.slice(1)
-
-        return (
-          <span key={segment}>
-            <span className="separator">/</span>
-            <span>{capitalized}</span>
-          </span>
-        )
-      })}
+      {displaySegments.map((segment) => (
+        <span key={segment}>
+          <span className="separator">/</span>
+          <span>{segment}</span>
+        </span>
+      ))}
     </nav>
   )
 }
