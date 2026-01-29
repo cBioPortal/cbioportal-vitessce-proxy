@@ -3,9 +3,9 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, useSearchParams } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
-import VitessceViewer from './components/VitessceViewer.jsx'
-import Header from './components/Header.jsx'
-import Breadcrumb from './components/Breadcrumb.jsx'
+import VitessceViewer from './components/VitessceViewer.tsx'
+import Header from './components/Header.tsx'
+import Breadcrumb from './components/Breadcrumb.tsx'
 
 // Detect if running in an iframe or if embed mode is requested via query param
 const isInIframe = window.self !== window.top
