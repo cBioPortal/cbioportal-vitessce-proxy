@@ -1,11 +1,16 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FormEvent } from 'react'
+
+interface ViewConfig {
+  path: string
+  name: string
+}
 
 function App() {
-  const [viewConfigs, setViewConfigs] = useState([])
+  const [viewConfigs, setViewConfigs] = useState<ViewConfig[]>([])
   const [customConfig, setCustomConfig] = useState('')
   const [jsonUrl, setJsonUrl] = useState('')
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<string | null>(null)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -15,7 +20,7 @@ function App() {
       .catch(() => setViewConfigs([]))
   }, [])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setError(null)
     try {
@@ -23,11 +28,11 @@ function App() {
       sessionStorage.setItem('customVitessceConfig', JSON.stringify(parsed))
       navigate('/view?dataset=_custom')
     } catch (err) {
-      setError('Invalid JSON: ' + err.message)
+      setError('Invalid JSON: ' + (err instanceof Error ? err.message : String(err)))
     }
   }
 
-  const handleUrlSubmit = (e) => {
+  const handleUrlSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (jsonUrl.trim()) {
       navigate(`/view?json=${encodeURIComponent(jsonUrl.trim())}`)

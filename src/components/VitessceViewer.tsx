@@ -8,8 +8,8 @@ function VitessceViewer() {
   const dataset = searchParams.get('dataset')
   const jsonUrl = searchParams.get('json')
   const isEmbedMode = searchParams.get('embed') === 'true'
-  const [config, setConfig] = useState(null)
-  const [error, setError] = useState(null)
+  const [config, setConfig] = useState<Record<string, unknown> | null>(null)
+  const [error, setError] = useState<string | null>(null)
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function VitessceViewer() {
           return res.json()
         })
         .then(setConfig)
-        .catch((err) => setError(err.message))
+        .catch((err: Error) => setError(err.message))
     } else if (dataset === '_custom') {
       const stored = sessionStorage.getItem('customVitessceConfig')
       if (stored) {
@@ -42,7 +42,7 @@ function VitessceViewer() {
           return res.json()
         })
         .then(setConfig)
-        .catch((err) => setError(err.message))
+        .catch((err: Error) => setError(err.message))
     }
   }, [dataset, jsonUrl])
 
@@ -96,7 +96,7 @@ function VitessceViewer() {
                   type="text"
                   readOnly
                   value={embedUrl}
-                  onClick={(e) => e.target.select()}
+                  onClick={(e) => e.currentTarget.select()}
                 />
                 <button
                   onClick={() => {

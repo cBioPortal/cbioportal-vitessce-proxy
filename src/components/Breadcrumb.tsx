@@ -13,7 +13,7 @@ function Breadcrumb() {
   }
 
   // Build display segments from path + dataset/json query param
-  const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1)
+  const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
 
   const displaySegments = pathSegments.map((segment) => capitalize(decodeURIComponent(segment)))
   if (jsonUrl) {
