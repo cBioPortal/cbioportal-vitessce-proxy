@@ -1,6 +1,6 @@
 import { useSearchParams, Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { Vitessce } from '@vitessce/dev'
+import { Vitessce } from 'vitessce'
 
 function VitessceViewer() {
   const [searchParams] = useSearchParams()
