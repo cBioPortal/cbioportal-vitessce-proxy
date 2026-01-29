@@ -87,7 +87,7 @@ function App() {
             <button type="submit" className="primary">Load from URL</button>
             <button
               type="button"
-              onClick={() => setJsonUrl(`${window.location.origin}${import.meta.env.BASE_URL}view_configs/spectrum_all_cells_csc_chunked_all_10.zarr.json`)}
+              onClick={() => setJsonUrl(`${window.location.origin}${import.meta.env.BASE_URL}view_configs/spectrum_all_cells_csc_chunked_all_10.json`)}
             >
               Example
             </button>
