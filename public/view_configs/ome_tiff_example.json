@@ -1,0 +1,232 @@
+{
+	"version": "1.0.16",
+	"name": "Yapp et al., 2025 - 1",
+	"description": "Large scale 3D CyCIF of thick tissue sections preserves intact cells, enabling accurate analysis of cell states, interactions, and spatially restricted signaling that thin sections miss.",
+	"datasets": [
+		{
+			"uid": "A",
+			"name": "My dataset",
+			"files": [
+				{
+					"url": "https://data-2.vitessce.io/data/sorger/bloodVessel_bigger.ome.tiff",
+					"fileType": "image.ome-tiff",
+					"coordinationValues": {
+						"fileUid": "melanoma"
+					},
+					"options": {
+						"offsetsUrl": "https://data-2.vitessce.io/data/sorger/bloodVessel_bigger.offsets.json"
+					}
+				}
+			]
+		}
+	],
+	"coordinationSpace": {
+		"dataset": {
+			"A": "A"
+		},
+		"spatialTargetZ": {
+			"A": 0
+		},
+		"spatialTargetT": {
+			"A": 0
+		},
+		"spatialRenderingMode": {
+			"A": "3D"
+		},
+		"imageLayer": {
+			"A": "__dummy__"
+		},
+		"fileUid": {
+			"A": "melanoma"
+		},
+		"spatialLayerOpacity": {
+			"A": 1
+		},
+		"spatialTargetResolution": {
+			"A": null
+		},
+		"imageChannel": {
+			"A": "__dummy__",
+			"B": "__dummy__",
+			"C": "__dummy__",
+			"D": "__dummy__"
+		},
+		"spatialTargetC": {
+			"A": 13,
+			"B": 4,
+			"C": 8,
+			"D": 5
+		},
+		"spatialChannelColor": {
+			"A": [
+				255,
+				255,
+				0
+			],
+			"B": [
+				0,
+				255,
+				255
+			],
+			"C": [
+				255,
+				0,
+				255
+			],
+			"D": [
+				0,
+				255,
+				0
+			]
+		},
+		"spatialChannelVisible": {
+			"A": true,
+			"B": true,
+			"C": true,
+			"D": true
+		},
+		"spatialChannelOpacity": {
+			"A": 1,
+			"B": 1,
+			"C": 1,
+			"D": 1
+		},
+		"spatialChannelWindow": {
+			"A": [
+				2,
+				53
+			],
+			"B": [
+				525,
+				5863
+			],
+			"C": [
+				134,
+				24050
+			],
+			"D": [
+				457,
+				20591
+			]
+		},
+		"metaCoordinationScopes": {
+			"A": {
+				"spatialTargetZ": "A",
+				"spatialTargetT": "A",
+				"spatialRenderingMode": "A",
+				"imageLayer": [
+					"A"
+				]
+			}
+		},
+		"metaCoordinationScopesBy": {
+			"A": {
+				"imageLayer": {
+					"fileUid": {
+						"A": "A"
+					},
+					"spatialLayerOpacity": {
+						"A": "A"
+					},
+					"spatialTargetResolution": {
+						"A": "A"
+					},
+					"imageChannel": {
+						"A": [
+							"A",
+							"B",
+							"C",
+							"D"
+						]
+					}
+				},
+				"imageChannel": {
+					"spatialTargetC": {
+						"A": "A",
+						"B": "B",
+						"C": "C",
+						"D": "D"
+					},
+					"spatialChannelColor": {
+						"A": "A",
+						"B": "B",
+						"C": "C",
+						"D": "D"
+					},
+					"spatialChannelVisible": {
+						"A": "A",
+						"B": "B",
+						"C": "C",
+						"D": "D"
+					},
+					"spatialChannelOpacity": {
+						"A": "A",
+						"B": "B",
+						"C": "C",
+						"D": "D"
+					},
+					"spatialChannelWindow": {
+						"A": "A",
+						"B": "B",
+						"C": "C",
+						"D": "D"
+					}
+				}
+			}
+		}
+	},
+	"layout": [
+		{
+			"component": "spatialBeta",
+			"coordinationScopes": {
+				"dataset": "A",
+				"metaCoordinationScopes": [
+					"A"
+				],
+				"metaCoordinationScopesBy": [
+					"A"
+				]
+			},
+			"x": 0,
+			"y": 0,
+			"w": 8,
+			"h": 8,
+			"props": {
+				"three": true
+			}
+		},
+		{
+			"component": "linkController",
+			"coordinationScopes": {
+				"dataset": "A",
+				"metaCoordinationScopes": [
+					"A"
+				],
+				"metaCoordinationScopesBy": [
+					"A"
+				]
+			},
+			"x": 8,
+			"y": 1,
+			"w": 4,
+			"h": 2
+		},
+		{
+			"component": "layerControllerBeta",
+			"coordinationScopes": {
+				"dataset": "A",
+				"metaCoordinationScopes": [
+					"A"
+				],
+				"metaCoordinationScopesBy": [
+					"A"
+				]
+			},
+			"x": 8,
+			"y": 0,
+			"w": 4,
+			"h": 6
+		}
+	],
+	"initStrategy": "auto"
+}

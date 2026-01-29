@@ -10,5 +10,9 @@
   {
     "name": "Spectrum All Cells (remote)",
     "path": "spectrum_all_cells"
+  },
+  {
+    "name": "OME-TIFF Example",
+    "path": "ome_tiff_example"
   }
 ]
