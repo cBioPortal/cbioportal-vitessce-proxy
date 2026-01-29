@@ -95,7 +95,7 @@ describe('Load from URL', () => {
 
     const input = screen.getByPlaceholderText('https://example.com/config.json')
     expect(input).toHaveValue(
-      'http://localhost:5173/view_configs/spectrum_all_cells_csc_chunked_all_10.zarr.json',
+      `${window.location.origin}/view_configs/spectrum_all_cells_csc_chunked_all_10.zarr.json`,
     )
   })
 
@@ -108,7 +108,7 @@ describe('Load from URL', () => {
     const submitButton = screen.getByRole('button', { name: 'Load from URL' })
     fireEvent.click(submitButton)
 
-    const expectedUrl = 'http://localhost:5173/view_configs/spectrum_all_cells_csc_chunked_all_10.zarr.json'
+    const expectedUrl = `${window.location.origin}/view_configs/spectrum_all_cells_csc_chunked_all_10.zarr.json`
     expect(mockNavigate).toHaveBeenCalledWith(
       `/view?json=${encodeURIComponent(expectedUrl)}`,
     )

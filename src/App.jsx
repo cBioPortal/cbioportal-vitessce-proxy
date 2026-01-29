@@ -9,7 +9,7 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch('/view_configs/index.json')
+    fetch(`${import.meta.env.BASE_URL}view_configs/index.json`)
       .then((res) => res.json())
       .then(setViewConfigs)
       .catch(() => setViewConfigs([]))
@@ -44,7 +44,7 @@ function App() {
               <Link to={`/view?dataset=${config.path}`}>{config.name}</Link>
               {' '}
               <a
-                href={`/view_configs/${config.path}.json`}
+                href={`${import.meta.env.BASE_URL}view_configs/${config.path}.json`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="json-link"
@@ -87,7 +87,7 @@ function App() {
             <button type="submit" className="primary">Load from URL</button>
             <button
               type="button"
-              onClick={() => setJsonUrl('http://localhost:5173/view_configs/spectrum_all_cells_csc_chunked_all_10.zarr.json')}
+              onClick={() => setJsonUrl(`${window.location.origin}${import.meta.env.BASE_URL}view_configs/spectrum_all_cells_csc_chunked_all_10.zarr.json`)}
             >
               Example
             </button>

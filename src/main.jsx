@@ -28,7 +28,7 @@ function Layout() {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Layout />
     </BrowserRouter>
   </StrictMode>,
