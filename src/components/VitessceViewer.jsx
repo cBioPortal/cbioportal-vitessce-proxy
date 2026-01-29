@@ -73,8 +73,9 @@ function VitessceViewer() {
 
   // Build embed URL (current URL + embed=true)
   const canEmbed = dataset !== '_custom'
+  const base = import.meta.env.BASE_URL.replace(/\/+$/, '')
   const embedUrl = canEmbed
-    ? `${window.location.origin}${location.pathname}${location.search}${location.search ? '&' : '?'}embed=true`
+    ? `${window.location.origin}${base}${location.pathname}${location.search}${location.search ? '&' : '?'}embed=true`
     : null
 
   return (
