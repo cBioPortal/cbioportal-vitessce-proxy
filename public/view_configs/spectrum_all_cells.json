@@ -30,22 +30,6 @@
               {
                 "name": "Cell Type",
                 "path": "obs/cell_type"
-              },
-              {
-                "name": "Tissue",
-                "path": "obs/tissue"
-              },
-              {
-                "name": "Assay",
-                "path": "obs/assay"
-              },
-              {
-                "name": "Disease",
-                "path": "obs/disease"
-              },
-              {
-                "name": "Sex",
-                "path": "obs/sex"
               }
             ]
           }
