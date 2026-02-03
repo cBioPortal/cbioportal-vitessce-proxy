@@ -36,7 +36,12 @@ function VitessceViewer() {
         setError('No custom config found')
       }
     } else if (dataset) {
-      fetch(`${import.meta.env.BASE_URL}view_configs/${dataset}.json`)
+      // Check if dataset is a full URL or a local path
+      const datasetUrl = dataset.startsWith('http') 
+        ? dataset 
+        : `${import.meta.env.BASE_URL}view_configs/${dataset}.json`
+      
+      fetch(datasetUrl)
         .then((res) => {
           if (!res.ok) throw new Error(`Config not found: ${dataset}`)
           return res.json()
@@ -69,7 +74,9 @@ function VitessceViewer() {
   }
 
   // Build config URL for direct access to the JSON
-  const configUrl = jsonUrl || (dataset && dataset !== '_custom' ? `${import.meta.env.BASE_URL}view_configs/${dataset}.json` : null)
+  const configUrl = jsonUrl || (dataset && dataset !== '_custom' 
+    ? (dataset.startsWith('http') ? dataset : `${import.meta.env.BASE_URL}view_configs/${dataset}.json`)
+    : null)
 
   // Build embed URL (current URL + embed=true)
   const canEmbed = dataset !== '_custom'
