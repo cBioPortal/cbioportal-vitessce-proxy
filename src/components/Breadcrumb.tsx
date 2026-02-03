@@ -5,7 +5,7 @@ function Breadcrumb() {
   const [searchParams] = useSearchParams()
   const pathSegments = location.pathname.split('/').filter(Boolean)
   const dataset = searchParams.get('dataset')
-  const jsonUrl = searchParams.get('json')
+  const jsonUrl = searchParams.get('config_url')
 
   // Don't show breadcrumb on home page
   if (pathSegments.length === 0) {

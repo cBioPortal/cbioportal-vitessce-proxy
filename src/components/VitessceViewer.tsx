@@ -6,7 +6,7 @@ function VitessceViewer() {
   const [searchParams] = useSearchParams()
   const location = useLocation()
   const dataset = searchParams.get('dataset')
-  const jsonUrl = searchParams.get('json')
+  const jsonUrl = searchParams.get('config_url')
   const isEmbedMode = searchParams.get('embed') === 'true'
   const [config, setConfig] = useState<Record<string, unknown> | null>(null)
   const [error, setError] = useState<string | null>(null)

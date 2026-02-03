@@ -46,7 +46,7 @@ The `path` value should match the filename without `.json` (e.g., `my_dataset` m
 |---|---|
 | `/` | Homepage with dataset list and config input forms |
 | `/view?dataset=<name>` | Load a local config from `view_configs/` |
-| `/view?json=<url>` | Load a config from a remote URL |
+| `/view?config_url=<url>` | Load a config from a remote URL |
 | `/view?dataset=<name>&embed=true` | Embed mode (hides header and breadcrumb) |
 
 Embed mode is also automatically activated when the page is loaded inside an iframe.

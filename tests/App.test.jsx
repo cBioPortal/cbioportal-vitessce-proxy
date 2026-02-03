@@ -48,7 +48,7 @@ describe('Load from URL', () => {
     fireEvent.click(submitButton)
 
     expect(mockNavigate).toHaveBeenCalledWith(
-      `/view?json=${encodeURIComponent('https://example.com/my-config.json')}`,
+      `/view?config_url=${encodeURIComponent('https://example.com/my-config.json')}`,
     )
   })
 
@@ -62,7 +62,7 @@ describe('Load from URL', () => {
     fireEvent.click(submitButton)
 
     expect(mockNavigate).toHaveBeenCalledWith(
-      `/view?json=${encodeURIComponent('https://example.com/config.json')}`,
+      `/view?config_url=${encodeURIComponent('https://example.com/config.json')}`,
     )
   })
 
@@ -110,7 +110,7 @@ describe('Load from URL', () => {
 
     const expectedUrl = `${window.location.origin}/view_configs/spectrum_all_cells_csc_chunked_all_10.json`
     expect(mockNavigate).toHaveBeenCalledWith(
-      `/view?json=${encodeURIComponent(expectedUrl)}`,
+      `/view?config_url=${encodeURIComponent(expectedUrl)}`,
     )
   })
 })

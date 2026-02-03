@@ -35,7 +35,7 @@ function App() {
   const handleUrlSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (jsonUrl.trim()) {
-      navigate(`/view?json=${encodeURIComponent(jsonUrl.trim())}`)
+      navigate(`/view?config_url=${encodeURIComponent(jsonUrl.trim())}`)
     }
   }
 
