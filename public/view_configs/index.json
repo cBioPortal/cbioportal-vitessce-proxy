@@ -1,13 +1,5 @@
 [
   {
-    "name": "Spectrum All Cells (all, 10)",
-    "path": "spectrum_all_cells_csc_chunked_all_10"
-  },
-  {
-    "name": "Spectrum All Cells (HVG 200) (100000, 200)",
-    "path": "spectrum_all_cells_top200_chunked_100000_200"
-  },
-  {
     "name": "Spectrum All Cells (remote)",
     "path": "spectrum_all_cells"
   },
